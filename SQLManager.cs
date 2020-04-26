@@ -89,7 +89,7 @@ namespace Tools
                 }
             }
         }
-        public List<string> Select(string _TableName, string _Columns, string _Condition, int _ColumnsCount)
+        public List<string> Select(string _TableName, string _Columns, string _Condition)
         {
             List<string> queryResults = new List<string>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnectionString))
@@ -123,7 +123,6 @@ namespace Tools
             }
             return queryResults;
         }
-
         private bool isConnected(SqlConnection sqlConnection)
         {
             if (sqlConnection.State == ConnectionState.Open)
